@@ -1,0 +1,208 @@
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-family:"Trebuchet MS", "DejaVu Sans", "Liberation Sans", Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+.container {
+	display:block;
+	margin:24px;
+}
+.pageContent {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+header {
+	display:block;
+	height:72px;
+	padding-bottom:12px;
+	margin-bottom:12px;
+	border-bottom:1px dashed #138dde;
+}
+h1 {
+	font-family:"Expletus Sans", arial, serif;
+	font-size:56px;
+	display:block;
+	float:left;
+	margin-right:48px;
+	height:72px;
+	line-height:72px;
+	vertical-align:middle;
+}
+ul {
+	display:block;
+	margin-left:24px;
+	margin-bottom:4px;
+}
+.warning {
+    width:600px;
+}
+ul li {
+	margin:4px 0px;
+}
+ul.nav {
+	display:block;
+	float:left;
+	height:40px;
+	margin-top:16px;
+	margin-left:0px;
+	margin-bottom:0px;
+}
+ul.nav li {
+	display:block;
+	list-style:none;
+	float:left;
+	height:40px;
+	line-height:40px;
+	vertical-align:middle;
+	margin:0px;
+	margin-right:12px;
+}
+ul.nav li a {
+	display:block;
+	height:40px;
+	line-height:40px;
+	vertical-align:middle;
+	padding:0px 12px;
+	color:#138dde;
+	text-decoration:none;
+	font-size:20px;
+}
+ul.nav li.sel a, ul.nav li a:hover {
+	background-color:#84c8f4;
+	color:#ffffff;
+}
+h2 {
+	font-size:24px;
+	margin-bottom:12px;
+}
+h3 {
+	font-size:18px;
+	margin-bottom:12px;
+}
+.warning {
+	padding:12px;
+	background-color:#ffcab6;
+	margin-bottom:12px;
+}
+.warning ul li:last-child {
+	margin-bottom:0px;
+}
+fieldset {
+	border:none;
+	clear:both;
+}
+fieldset.submission {
+	padding:12px;
+	border:1px solid #a4d6f7;
+	background-color:#e2f2fd;
+	width:750px;
+	margin-bottom:12px;
+}
+fieldset label {
+	display:block;
+	color:#333333;
+	margin-bottom:4px;
+}
+fieldset input, fieldset select {
+	display:block;
+	margin-bottom:12px;
+}
+fieldset input {
+	width:240px;	
+	padding:4px;
+	font-size:12px;
+}
+fieldset textarea {
+	font-family:"Courier New", monospace;
+	font-size:14px;
+	height:240px;
+	width:720px;
+	padding:8px;
+	margin-bottom:12px;
+}
+textarea.mini {
+    width:240px;
+    height:120px;
+}
+fieldset input[type=submit] {
+	width:auto;
+}
+fieldset.submission select {
+	margin-bottom:0;
+}
+fieldset.submission input[type=submit] {
+	margin-bottom:0;
+	margin-top:-16px;
+}
+table {
+	margin-bottom:12px;
+}
+table td, table th {
+	padding:4px 8px;
+}
+table tr:nth-child(even) {
+	background-color:#f2f9fe;
+}
+table tr:nth-child(odd) {
+	background-color:#e2f2fd;
+}
+table tr.heading {
+	background-color:#c3e4fa;
+}
+table tr.heading td {
+	font-weight:bold;
+	text-align:center;
+}
+table.problems tr.solved {
+	background-color:#b9fac4;
+}
+table.problems td.name {
+	min-width:360px;
+}
+p {
+	margin-bottom:12px;
+	line-height:20px;
+}
+td {
+	vertical-align:top;
+}
+table.sample_data td {
+	margin-top:12px;
+}
+pre {
+    margin-bottom:12px;
+}
+pre.code, .CodeRay {
+	background-color:#ededed;
+	padding:12px;
+	margin-bottom:12px;
+}
+.login {
+	width:280px;
+	float:left;
+	border-right:1px solid #dedede;
+	margin-right:24px;
+}
+.register {
+	width:280px;
+	float:left;
+}
+.show_user h2 {
+    height:64px;
+    line-height:64px;
+    vertical-align:middle;
+}
+.show_user h2 img {
+    border:1px solid #dedede;
+    display:block;
+    float:left;
+    margin-right:16px;
+}
+.show_user h2 span {
+    float:left;
+    display:block;
+}
