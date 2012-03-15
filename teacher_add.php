@@ -17,13 +17,7 @@ if ($_SESSION['id'] == null){
 }
 
 
-$con = mysql_connect("localhost","root","-Removed-");
-if (!$con)
-  {
-  die('Database is unhappy with its working conditions, So its on strike for a while. Its chanting : ' . mysql_error());
-  }
-
-mysql_select_db("notorac", $con);
+require 'config.php';
 if ($_SESSION['authlevel'] < 2){
 	$challenge = mysql_query("INSERT INTO `notorac`.`alerts` (`userid`, `issue`) VALUES ('$idnumber', 'Attemped to load teacher only page.');");
 	die('You are not allowed to view this page. This offence has been logged.');

@@ -15,14 +15,7 @@ require 'session.php';
 if ($_SESSION['id'] == null){
 	die('You are not logged in, Your session proabbly timed out. Please login again.');
 }
-
-$con = mysql_connect("localhost","root","-Removed-");
-if (!$con)
-  {
-  die('Database is unhappy with its working conditions, So its on strike for a while. Its chanting : ' . mysql_error());
-  }
-
-mysql_select_db("notorac", $con);
+require 'config.php';
 $challenge = mysql_query("SELECT * FROM `problems` LIMIT 0,50;");
 $idnumber = $_SESSION['id'];
 $username = mysql_query("SELECT * FROM `auth` WHERE `userID` = '$idnumber' LIMIT 1;");

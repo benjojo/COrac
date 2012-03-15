@@ -11,13 +11,7 @@ remove it if permission is not granted.
 */ ############################################################################################
 
 require 'session.php';
-$con = mysql_connect("localhost","root","-Removed-");
-if (!$con)
-  {
-  die('Database is unhappy with its working conditions, So its on strike for a while. Its chanting : ' . mysql_error());
-  }
-
-mysql_select_db("notorac", $con);
+require 'config.php';
 if (isset($_POST["login"])){
 	$esc_usr = mysql_real_escape_string($_POST["login"]);
 	$esc_pas = hash('haval128,5', $_POST["password"]);

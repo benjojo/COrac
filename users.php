@@ -15,14 +15,8 @@ require 'session.php';
 if ($_SESSION['id'] == null){
 	die('You are not logged in, Your session proabbly timed out. Please login again.');
 }
+require 'config.php';
 
-$con = mysql_connect("localhost","root","-Removed-");
-if (!$con)
-  {
-  die('Database is unhappy with its working conditions, So its on strike for a while. Its chanting : ' . mysql_error());
-  }
-
-mysql_select_db("notorac", $con);
 $listofusers = mysql_query("SELECT submissions.userid, COUNT( submissions.userid ) AS sub, auth.username
 FROM  `submissions` 
 JOIN  `auth` ON submissions.userid = auth.userID

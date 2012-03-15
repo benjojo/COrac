@@ -15,15 +15,8 @@ if ($_SESSION['id'] == null){
 	die('You are not logged in, Your session proabbly timed out. Please login again.');
 }
 
-$con = mysql_connect("localhost","root","-Removed-");
-if (!$con)
-  {
-  die('Database is unhappy with its working conditions, So its on strike for a while. Its chanting : ' . mysql_error());
-  }
-  
- 
+require 'config.php';
 
-mysql_select_db("notorac", $con);
 $esc_id = mysql_real_escape_string($_GET["id"]);
 $submission = mysql_query("SELECT * FROM `submissions` WHERE `codeid` = '$esc_id' LIMIT 1;");
 $submissiondata = mysql_fetch_array($submission);

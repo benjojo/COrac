@@ -14,8 +14,8 @@
 						
 										<li><img src="/notorac/i/key.png" alt="Key" width="32" height="32" /></li>
                                         <li><a href="index.php">Login</a></li>
-										<li><img src="/notorac/i/pen.png" alt="Key" width="32" height="32" /></li>
-                                        <li><a href="reg.php">Register</a></li>
+									<!--	<li><img src="/notorac/i/pen.png" alt="Key" width="32" height="32" /></li>
+                                        <li><a href="reg.php">Register</a></li> -->
                         </ul>
                 </header>
                 <form accept-charset="UTF-8" action="login.php" method="post">
