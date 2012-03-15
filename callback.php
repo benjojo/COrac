@@ -1,14 +1,11 @@
 <?php
 /* #############################################################################################
-WARNING. By using this code you have ensured that you have confirmed that the
-owner (Ben Cartwright - Cox, Ben@benjojo.co.uk) is aware of its use and that
-you agree to the following.
+WARNING. By using this code you have ensured that you have confirmed that the following things apply
 1) Not responisble for any data loss in the use of this package
-2) You are not to use it along the data of 1st of May 2013.
-3) There are date checkers in this code. You may not alter them with out the owners permission
-If use of this code is found in use with out the owners permission, Action will be taken to
-remove it if permission is not granted.
+2) This is for non commercial systems.
+If you have more questions please email (Ben (t) benjojo.co.uk)
 */ ############################################################################################
+
 
 require 'config.php';
 $esc_id = mysql_real_escape_string($_POST["id"]);
