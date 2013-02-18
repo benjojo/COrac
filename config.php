@@ -9,4 +9,3 @@ if (!$con)
 }
 mysql_select_db("notorac", $con);
 ?>
-
