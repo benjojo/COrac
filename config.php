@@ -1,11 +1,27 @@
 <?php
+/*
+Things that are stored in the session var.
+UserID
+UserName
+ClassID
+*/
+
 session_start();
-$USE_AUTH_API = 0; // Change if you want to use in a diffrent system.
 
 $con = mysql_connect("localhost","root","-Removed-");
 if (!$con)
 {
-	die('Database is unhappy with its working conditions, So its on strike for a while. Its chanting : ' . mysql_error());
+	die(mysql_error());
 }
 mysql_select_db("notorac", $con);
+
+function CheckSession()
+{
+    if(!isset($_SESSION['id']))
+    {
+        header("location: ../");
+        die("Aborting. Not Logged In.");
+    }
+}
+
 ?>
