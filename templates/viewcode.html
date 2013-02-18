@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COrac</title>
+	<link href='http://fonts.googleapis.com/css?family=Expletus+Sans' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>COrac</h1>
+			<ul class="nav">
+				<li><img src="i/rss.png" alt="Home" width="32" height="32" /></li>
+				<li><a href="home.php">Home</a></li>
+					<li><img src="i/tool.png" alt="Edit" width="32" height="32" /></li>
+					<li><a href="editp.php">Edit Profile</a></li>
+					<li><img src="i/bars.png" alt="Leaderboard" width="32" height="32" /></li>
+					<li><a href="users.php">Leaderboard</a></li>
+					<li><img src="i/minus.png" alt="GTFO" width="32" height="32" /></li>
+					<li><a href="die.php" rel="nofollow">Logout</a></li>
+			</ul>
+		</header>
+        {% if person.is_adult %}
+			<div class="warning">
+				<ul>
+						<p>{{ page.Error }}</p>
+				</ul>
+			</div>
+        {% endif %}
+			<script type="text/javascript" src="js/XRegExp.js"></script>
+<script type="text/javascript" src="js/shCore.js"></script>
+<script type="text/javascript" src="js/shBrushJava.js"></script>
+
+
+<link href="shCore.css" rel="stylesheet" type="text/css" />
+<link href="shThemeDefault.css" rel="stylesheet" type="text/css" />
+ 
+
+<h2>Code Submission number {{ page.SubmissionID }}# (By {{ page.SubmitterName }}) </h2>
+
+  <fieldset class="submission">
+  	<img src="i/document.png" alt="Document" width="32" height="32" />
+	<p><strong>Source code</strong></p>
+	
+	<pre class="brush: java">
+    {{ page.OrigCode }}
+	</pre>
+  	<img src="i/arrowd.png" alt="Document" width="32" height="32" />
+	<p><strong>Output</strong></p>
+	<textarea wrap="off">{{ page.Output }}</textarea>
+  	<img src="i/read.png" alt="Document" width="32" height="32" />
+	<p><strong>Compiler Said...</strong></p>
+	<textarea wrap="off">{{ page.CompilerOutput }}</textarea>
+	<img src="i/arrowd.png" alt="Document" width="32" height="32" />
+	<img src="i/clock.png" alt="Document" width="32" height="32" />
+	<p><strong>Execution Time:</strong></p> <p> {{ page.ExecTime }} Secs</p>
+  </fieldset>
+	</div>
+	<script type="text/javascript">
+     SyntaxHighlighter.all()
+</script>
+</body>
+</html>

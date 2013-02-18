@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COrac</title>
+	<link href='http://fonts.googleapis.com/css?family=Expletus+Sans' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>COrac</h1>
+			<ul class="nav">
+				<li><img src="i/rss.png" alt="Home" width="32" height="32" /></li>
+				<li><a href="home.php">Home</a></li>
+					<li><img src="i/tool.png" alt="Edit" width="32" height="32" /></li>
+					<li><a href="editp.php">Edit Profile</a></li>
+					<li><img src="i/bars.png" alt="Leaderboard" width="32" height="32" /></li>
+					<li><a href="users.php">Leaderboard</a></li>
+					<li><img src="i/minus.png" alt="GTFO" width="32" height="32" /></li>
+					<li><a href="die.php" rel="nofollow">Logout</a></li>
+			</ul>
+		</header>
+<script type="text/javascript">
+<!--
+function delayer(){
+    window.location = "viewcode.php?id={{ page.ProblemID }}"
+}
+//-->
+</script>
+<body onLoad="setTimeout('delayer()', 2000)">
+
+
+
+<h2>Processing...</h2>
+
+  <fieldset class="submission">
+  	<img src="/notorac/i/cog.gif" alt="GTFO" width="32" height="32" />
+	<p><strong>Running your code for</strong> {{ page.TimeLimit }}</p>
+  </fieldset>
+
+
+
+
+
+	</div>
+</body>
+</html>
