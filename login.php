@@ -48,7 +48,7 @@ if(isset($_POST['login']) && isset($_POST['password']))
 }
 else
 {
-    if(isset($_SERVER['HTTP_REFERER'])
+    if(isset($_SERVER['HTTP_REFERER']))
     {
         header("Location: " . $_SERVER['HTTP_REFERER']); // Send the user back to where they came from.
     }
