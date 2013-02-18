@@ -17,7 +17,7 @@ mysql_select_db("notorac", $con);
 
 function CheckSession()
 {
-    if(!isset($_SESSION['id']))
+    if(!isset($_SESSION['UserID']))
     {
         header("location: ./");
         die("Aborting. Not Logged In.");
