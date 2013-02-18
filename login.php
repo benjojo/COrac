@@ -30,10 +30,10 @@ if(isset($_POST['login']) && isset($_POST['password']))
     $Safe_Username = mysql_real_escape_string($_POST['login']);
     $Safe_Password = mysql_real_escape_string(MakeHash($_POST['password'],$_POST['login']));
     $Login_Query = mysql_query("SELECT * FROM `Users` WHERE `Name` = '$Safe_Username' AND `Password` = '$Safe_Password'");
-    $Login_Results = mysql_fetch_array($Login_Query);
     if(mysql_num_rows($Login_Query) != 0)
     {
         // The Correct Login was Entered.
+        $Login_Results = mysql_fetch_array($Login_Query);
         $_SESSION['UserID'] = $Login_Results['UserID'];
         $_SESSION['UserName'] = $Login_Results['Name'];
         $_SESSION['ClassID'] = $Login_Results['ClassID'];
