@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COrac</title>
+	<link href='http://fonts.googleapis.com/css?family=Expletus+Sans' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>COrac</h1>
+			<ul class="nav">
+				<li><img src="i/rss.png" alt="Home" width="32" height="32" /></li>
+				<li><a href="home.php">Home</a></li>
+					<li><img src="i/tool.png" alt="Edit" width="32" height="32" /></li>
+					<li><a href="editp.php">Edit Profile</a></li>
+					<li><img src="i/bars.png" alt="Leaderboard" width="32" height="32" /></li>
+					<li><a href="users.php">Leaderboard</a></li>
+					<li><img src="i/minus.png" alt="GTFO" width="32" height="32" /></li>
+					<li><a href="die.php" rel="nofollow">Logout</a></li>
+			</ul>
+		</header>
+
+
+<h2>{{ page.ProblemName }}</h2>
+
+<p>
+  View the <a href="hol.php?id={{ page.ProblemID }}">hall of fame</a> for this problem
+</p>
+<form accept-charset="UTF-8" action="submitattemp.php" enctype="multipart/form-data"  method="post">
+<div style="margin:0;padding:0;display:inline">
+<input name="utf8" type="hidden" value="&#x2713;" />
+<input name="id" type="hidden" value="{{ page.ProblemID }}" />
+</div>
+  <fieldset class="submission">
+  	<img src="i/cloud_upload.png" alt="Upload" width="32" height="32" />
+    <label for="">Source Code To Submit</label>
+    <label for="attempt_language">Language</label>
+    <select id="attempt_language" name="attempt[language]"><option value="c">Java</option>
+    <label for="attempt[source]">Source Code</label>
+    <textarea cols="40" id="code" name="code" rows="20" style="position:relative">
+class App {
+    public static void main(String[] args) {
+        System.out.println("This is a string."); // This is a comment
+    }
+}
+    </textarea>
+
+    <input name="commit" type="submit" value="Submit" />
+  </fieldset>
+  
+
+
+</form>
+
+
+
+  <p><strong>Time Limit:</strong> 1.0 second</p>
+
+<p></p>
+
+
+  <table class="sample_data">
+    <tr>
+      <th>Sample Input</th>
+      <th>Sample Output</th>
+    </tr>
+      <tr>
+        <td>
+          <pre>{{ page.SampleInput }}</pre>
+        </td>
+        <td>
+          <pre>{{ page.SampleOutput }}</pre>
+        </td>
+      </tr>
+  </table>
+
+
+	</div>
+</body>
+    <script type="text/javascript" src="js/jq.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/ace.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/theme-cobalt.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mode-pgsql.js" charset="utf-8"></script>
+	
+	  <script type="text/javascript">
+  $(function() {    
+    var code = $("#code").val();
+    $("#code").replaceWith($("<div>").attr({
+      id: "code"
+    }).css({
+      position: "relative",
+      width: "960px",
+      height: "480px",
+      marginBottom: "12px"
+    }));
+    window.editor = ace.edit("code");
+    var textarea = $("textarea").attr("name", "code");
+    editor.setTheme("ace/theme/cobalt");
+    editor.getSession().setUseSoftTabs(true);
+    editor.getSession().setValue(code);
+    editor.renderer.setShowPrintMargin(false);
+    
+    var language_modes = {
+      c:    { tabSize: 4, mode: require("ace/mode/pgsql").Mode },
+    };
+    language_modes.cpp = language_modes.c;
+    language_modes.plaintext = { tabSize: 4, mode: editor.getSession().getMode().constructor };
+    
+    $("form").submit(function() {
+      textarea.val(editor.getSession().getValue());
+    })
+    
+    function setModeForLanguage() {
+      var lang = $("#attempt_language option:selected").val();
+      if(typeof language_modes[lang] !== "undefined") {
+        var sess = editor.getSession(), mode = language_modes[lang];
+        sess.setTabSize(mode.tabSize);
+        sess.setMode(new mode.mode);
+      }
+    }
+    
+    $("#attempt_language").bind("change", setModeForLanguage);
+    setModeForLanguage();
+  });
+  </script>
+
+</html>
