@@ -20,13 +20,13 @@ If you have more questions please email (Ben (t) benjojo.co.uk)
 		<header>
 			<h1>COrac</h1>
 			<ul class="nav">
-				<li><img src="/notorac/i/rss.png" alt="Home" width="32" height="32" /></li>
-				<li><a href="http://colgate.benjojo.co.uk/notorac/home.php">Home</a></li>
-					<li><img src="/notorac/i/tool.png" alt="Edit" width="32" height="32" /></li>
+				<li><img src="i/rss.png" alt="Home" width="32" height="32" /></li>
+				<li><a href="home.php">Home</a></li>
+					<li><img src="i/tool.png" alt="Edit" width="32" height="32" /></li>
 					<li><a href="editp.php">Edit Profile</a></li>
-					<li><img src="/notorac/i/bars.png" alt="Leaderboard" width="32" height="32" /></li>
+					<li><img src="i/bars.png" alt="Leaderboard" width="32" height="32" /></li>
 					<li><a href="users.php">Leaderboard</a></li>
-					<li><img src="/notorac/i/minus.png" alt="GTFO" width="32" height="32" /></li>
+					<li><img src="i/minus.png" alt="GTFO" width="32" height="32" /></li>
 					<li><a href="die.php" rel="nofollow">Logout</a></li>
 			</ul>
 		</header>

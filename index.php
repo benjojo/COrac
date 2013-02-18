@@ -12,7 +12,7 @@
                         <h1>COrac</h1>
                         <ul class="nav">
 						
-										<li><img src="/notorac/i/key.png" alt="Key" width="32" height="32" /></li>
+										<li><img src="i/key.png" alt="Key" width="32" height="32" /></li>
                                         <li><a href="index.php">Login</a></li>
 									<!--	<li><img src="/notorac/i/pen.png" alt="Key" width="32" height="32" /></li>
                                         <li><a href="reg.php">Register</a></li> -->
