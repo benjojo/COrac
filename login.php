@@ -54,7 +54,7 @@ else
     }
     else
     {
-        header("Location: ../"); // If not. then just send them back to the root dir.
+        header("Location: ./"); // If not. then just send them back to the root dir.
     }
 }
 ?>

@@ -19,7 +19,7 @@ function CheckSession()
 {
     if(!isset($_SESSION['id']))
     {
-        header("location: ../");
+        header("location: ./");
         die("Aborting. Not Logged In.");
     }
 }
