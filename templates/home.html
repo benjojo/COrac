@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COrac {{ page.username }}</title>
+        <link href='http://fonts.googleapis.com/css?family=Expletus+Sans' rel='stylesheet' type='text/css'>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>COrac</h1>
+                <ul class="nav">
+                    <li><img src="i/rss.png" alt="Home" width="32" height="32" /></li>
+                    <li><a href="home.php">Home</a></li>
+                    <li><img src="i/tool.png" alt="Edit" width="32" height="32" /></li>
+                    <li><a href="editp.php">Edit Profile</a></li>
+                    <li><img src="i/bars.png" alt="Leaderboard" width="32" height="32" /></li>
+                    <li><a href="users.php">Leaderboard</a></li>
+                    <li><img src="i/minus.png" alt="Logout" width="32" height="32" /></li>
+                    <li><a href="die.php" rel="nofollow">Logout</a></li>
+                </ul>
+            </header>
+            <div class="pageContent">
+                <h2>Oh hello there {{ page.username }}</h2>
+
+                <table class="problems">
+                    <tr class="heading">
+                        <td>Problem</td>
+                        <td>Score</td>
+                        <td>Solved by</td>
+                    </tr>
+                    {{ page.problems }}
+                    <!--
+                    <tr class="">
+                        <td class="name"><a href="problems.php?id=1">Test test</a> </td>
+                        <td class="score"></td><td class="solved_by">1 Users</td>
+                    <tr class="">
+                        <td class="name"><a href="problems.php?id=2">Tes2t test</a> </td>
+                        <td class="score"></td><td class="solved_by">1 Users</td> -->
+                </table>
+            </div> <!-- .pageContent -->
+        </div> <!-- .container (I think) -->
+    </body>
+</html>
