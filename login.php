@@ -45,7 +45,7 @@ if (isset($_POST["login"])){
 				header("location:home.php"); // We are done here. (I think.)
 			}
 		}else{
-			die('Failed to login, User / Password combo not found in database.';
+			die('Failed to login, User / Password combo not found in database.');
 		}
 	}
 }
