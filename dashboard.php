@@ -8,7 +8,7 @@ $h2o = new h2o('./templates/home.html');
 
 $ClassID = mysql_real_escape_string($_SESSION['ClassID']);
 $ProblemsSQL = mysql_query("SELECT * FROM  `Problems` WHERE `ClassID` = '$ClassID' ORDER BY `Problems`.`ProblemID` DESC LIMIT 5;");
-$ProblemArray = json_decode("[[],[],[],[],[]]"); // wat.
+$ProblemArray = array();
 $Count = 0;
 while($row = mysql_fetch_array($ProblemsSQL))
 {
