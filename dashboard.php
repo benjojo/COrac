@@ -10,7 +10,7 @@ $ClassID = mysql_real_escape_string($_SESSION['ClassID']);
 $ProblemsSQL = mysql_query("SELECT * FROM  `Problems` WHERE `ClassID` = '$ClassID' ORDER BY `Problems`.`ProblemID` DESC LIMIT 5;");
 $ProblemArray = json_decode("[[],[],[],[],[]]"); // wat.
 $Count = 0;
-while($row = mysql_fetch_array($challenge))
+while($row = mysql_fetch_array($ProblemsSQL))
 {
     $Prob = array(
         'id' => $row['ProblemID'],
