@@ -4,10 +4,26 @@ include("config.php");
 CheckSession();
 
 $h2o = new h2o('./templates/home.html');
+//Time to fetch the problems.
 
+$ClassID = mysql_real_escape_string($_SESSION['ClassID']);
+$ProblemsSQL = mysql_query("SELECT * FROM  `Problems` WHERE `ClassID` = '$ClassID' ORDER BY `Problems`.`ProblemID` DESC");
+$ProblemArray = array();
+$Count = 0;
+while($row = mysql_fetch_array($challenge))
+{
+    $Prob = array(
+        'id' => $row['ProblemID'],
+        'name' => $row['ProblemName']
+    );
+    $ProblemArray[$Count] = $Prob;
+    $Count++;
+}
+
+// Now to fill out the array
 $page = array(
   'username' => $_SESSION['UserName'],
-  'problems' => 'Insert DataHere'
+  'problems' => $ProblemArray
 );
 
 # render your awesome page

@@ -29,7 +29,11 @@
                         <td>Score</td>
                         <td>Solved by</td>
                     </tr>
-                    {{ page.problems }}
+                    {% for prob in problems %}
+                    <tr class="">
+                        <td class="name"><a href="problems.php?id={{ prob.id }}">{{ prob.name }}</a> </td>
+                        <td class="score">0</td><td class="solved_by">0</td>
+                    {% endfor %}
                     <!--
                     <tr class="">
                         <td class="name"><a href="problems.php?id=1">Test test</a> </td>
