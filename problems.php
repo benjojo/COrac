@@ -10,25 +10,17 @@ $h2o = new h2o('./templates/problem.html');
 
 $ClassID = mysql_real_escape_string($_SESSION['ClassID']);
 $SafeID = mysql_real_escape_string($_GET['id']);
-$ProblemsSQL = mysql_query("SELECT * FROM  `Problems` WHERE `ClassID` = '$ClassID' AND `ProblemID` = $SafeID LIMIT 1;");
-$ProblemArray = array();
-$Count = 0;
-while($row = mysql_fetch_array($ProblemsSQL))
-{
-    $Prob = array(
-        'id' => $row['ProblemID'],
-        'name' => $row['ProblemName']
-    );
-    $ProblemArray[$Count] = $Prob;
-    $Count++;
-}
-//print_r(array('problems' => $ProblemArray));
-// Now to fill out the array
-
+$ProblemSQL = mysql_query("SELECT * FROM  `Problems` WHERE `ProblemID` = $SafeID LIMIT 1;");
+$ProblemData = mysql_fetch_array($ProblemSQL);
+//print_r($ProblemData);
 $page = array(
   'username' => $_SESSION['UserName'],
-  'probs' => $ProblemArray
+  'ProblemName' => $ProblemData[2],
+  'ProblemID' => $ProblemData[0],
+  'TimeLimit' => $ProblemData[4],
+  'SampleInput' => "none",
+  'SampleOutput' => "none"
 );
 
-echo $h2o->render($page);
+echo $h2o->render(compact('page'));
 ?>
