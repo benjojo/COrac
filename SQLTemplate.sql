@@ -23,6 +23,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Problems`
+--
+
+CREATE TABLE IF NOT EXISTS `Problems` (
+  `ProblemID` int(11) NOT NULL AUTO_INCREMENT,
+  `ClassID` varchar(8) NOT NULL,
+  `ProblemName` varchar(64) NOT NULL,
+  `Discription` text NOT NULL,
+  `TimeLimit` int(11) NOT NULL DEFAULT '1',
+  `Solution` text NOT NULL,
+  `ValueGenerationM` varchar(1) NOT NULL DEFAULT 'N',
+  PRIMARY KEY (`ProblemID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Users`
 --
 
@@ -30,12 +47,12 @@ CREATE TABLE IF NOT EXISTS `Users` (
   `UserID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(32) NOT NULL,
   `ClassID` varchar(8) NOT NULL,
-  `Password` varchar(32) NOT NULL,
+  `Password` varchar(64) NOT NULL,
   `Email` varchar(128) NOT NULL,
   `DateRegistered` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `GlobalScore` int(11) NOT NULL,
   PRIMARY KEY (`UserID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
