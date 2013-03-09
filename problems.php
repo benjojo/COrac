@@ -11,6 +11,10 @@ $h2o = new h2o('./templates/problem.html');
 $ClassID = mysql_real_escape_string($_SESSION['ClassID']);
 $SafeID = mysql_real_escape_string($_GET['id']);
 $ProblemSQL = mysql_query("SELECT * FROM  `Problems` WHERE `ProblemID` = $SafeID LIMIT 1;");
+if(mysql_num_rows($ProblemSQL) != 1)
+{
+	header("Location: ./dashboard.php"); die();
+}
 $ProblemData = mysql_fetch_array($ProblemSQL);
 //print_r($ProblemData);
 $page = array(
