@@ -19,13 +19,13 @@ while($row = mysql_fetch_array($ProblemsSQL))
     $ProblemArray[$Count] = $Prob;
     $Count++;
 }
-
+//print_r(array('problems' => $ProblemArray));
 // Now to fill out the array
+
 $page = array(
   'username' => $_SESSION['UserName'],
-  'problems' => $ProblemArray
+  'probs' => $ProblemArray
 );
 
-# render your awesome page
-echo $h2o->render(compact('page'));
+echo $h2o->render($page);
 ?>

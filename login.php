@@ -43,7 +43,7 @@ if(isset($_POST['login']) && isset($_POST['password']))
     else
     {
         sleep(1); //Stop the ~attacker~ from moving too fast.
-        die("Incorrect Username or Password. Please try again.");
+        die("Incorrect Username or Password. Please try again. " . $Safe_Password);
     }
 }
 else

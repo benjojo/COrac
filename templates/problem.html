@@ -67,10 +67,10 @@ class App {
     </tr>
       <tr>
         <td>
-          <pre>{{ page.SampleInput }}</pre>
+          <pre>{{ page.SampleInput | safe }}</pre>
         </td>
         <td>
-          <pre>{{ page.SampleOutput }}</pre>
+          <pre>{{ page.SampleOutput | safe }}</pre>
         </td>
       </tr>
   </table>
@@ -81,7 +81,7 @@ class App {
     <script type="text/javascript" src="js/jq.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/ace.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/theme-cobalt.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/mode-pgsql.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mode-java.js" charset="utf-8"></script>
 	
 	  <script type="text/javascript">
   $(function() {    
@@ -101,23 +101,25 @@ class App {
     editor.getSession().setValue(code);
     editor.renderer.setShowPrintMargin(false);
     
-    var language_modes = {
+    /*var language_modes = {
       c:    { tabSize: 4, mode: require("ace/mode/pgsql").Mode },
     };
     language_modes.cpp = language_modes.c;
-    language_modes.plaintext = { tabSize: 4, mode: editor.getSession().getMode().constructor };
-    
+    language_modes.plaintext = { tabSize: 4, mode: editor.getSession().getMode().constructor };*/
+    var JavaMode = require("ace/mode/java").Mode;
+
     $("form").submit(function() {
       textarea.val(editor.getSession().getValue());
     })
     
     function setModeForLanguage() {
-      var lang = $("#attempt_language option:selected").val();
+      /*var lang = $("#attempt_language option:selected").val();
       if(typeof language_modes[lang] !== "undefined") {
         var sess = editor.getSession(), mode = language_modes[lang];
         sess.setTabSize(mode.tabSize);
         sess.setMode(new mode.mode);
-      }
+      }*/
+	  editor.getSession().setMode(new JavaMode());
     }
     
     $("#attempt_language").bind("change", setModeForLanguage);
