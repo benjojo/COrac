@@ -23,7 +23,7 @@
 
 
 <h2>{{ page.ProblemName }}</h2>
-{{ page.Discription | safe }}
+{{ page.Discription | escape }}
 <p>
   View the <a href="hol.php?id={{ page.ProblemID }}">hall of fame</a> for this problem
 </p>
@@ -67,10 +67,10 @@ class App {
     </tr>
       <tr>
         <td>
-          <pre>{{ page.SampleInput | safe }}</pre>
+          <pre>{{ page.SampleInput | escape }}</pre>
         </td>
         <td>
-          <pre>{{ page.SampleOutput | safe }}</pre>
+          <pre>{{ page.SampleOutput | escape }}</pre>
         </td>
       </tr>
   </table>
