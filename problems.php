@@ -22,7 +22,7 @@ $page = array(
   'ProblemName' => $ProblemData[2],
   'ProblemID' => $ProblemData[0],
   'TimeLimit' => $ProblemData[4],
-  'Discription' => $ProblemData[4],
+  'Discription' => $ProblemData[3],
   'SampleInput' => "none",
   'SampleOutput' => "none"
 );
