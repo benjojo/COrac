@@ -29,17 +29,17 @@ if($Data['Solved'] == 0)
 $ShowError = false;
 $Error = "";
 
-if($Data['Output'] = "")
+if($Data['Output'] == "")
 {
     $ShowError = true;
-    $Error = "No output from program, Code might of failed.";
+    $Error = "No output from program, Code might of failed. Check the compiler output for errors.";
 }
 else
 {
     if($Data['Output'] != $Data['ExpectedOutput'])
     {
         $ShowError = true;
-        $Error = "Code awnswer did not match up, Expected '" . $Data['ExpectedOutput'] . "'";
+        $Error = "Code answer did not match up, Expected '" . $Data['ExpectedOutput'] . "'";
     }
 }
 
