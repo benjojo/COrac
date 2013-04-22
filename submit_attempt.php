@@ -36,10 +36,10 @@ Ok, so what we need to do here is to put the problem in the que to make sure tha
 To do this we will put it in a table and work from that.
 */
 //INSERT INTO `attempts` (`AttemptOwner`, `ProblemID`, `Code`, `Output`, `ExpectedOutput`, `CompilerOutput`, `ExecTime`) VALUES (1, 1, 'code', 'o1', 'o2', 'co', 1);
-$code = mysql_real_escape_string($_REQUEST['code']);
 
 if(isset($_REQUEST['code']))
 {
+    $code = mysql_real_escape_string($_REQUEST['code']);
     mysql_query("INSERT INTO `attempts` (`AttemptOwner`, `ProblemID`, `Code`, `Output`, `ExpectedOutput`, `CompilerOutput`, `ExecTime`) VALUES (1, 1, '$code', '', '', '', 1);");
     $AttemptID = mysql_insert_id ();
 }
@@ -48,9 +48,16 @@ else
     if(isset($_REQUEST['wid']))
     {
          $AttemptID = (int) $_REQUEST['wid'];
+         if(isset($_REQUEST['WaitC'])){
+             $WaitC = (int)$_REQUEST['WaitC'];
+         } else {
+             $WaitC = 1;
+         }
+         $AttemptID = $AttemptID . "&WaitC=" . $WaitC;
     }
     else
     {
+        die(print_r($_REQUEST));
         header("Location: ./dashbord.php");
     }
 }

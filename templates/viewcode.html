@@ -11,7 +11,7 @@
 			<h1>COrac</h1>
 			<ul class="nav">
 				<li><img src="i/rss.png" alt="Home" width="32" height="32" /></li>
-				<li><a href="home.php">Home</a></li>
+				<li><a href="dashboard.php">Home</a></li>
 					<li><img src="i/tool.png" alt="Edit" width="32" height="32" /></li>
 					<li><a href="editp.php">Edit Profile</a></li>
 					<li><img src="i/bars.png" alt="Leaderboard" width="32" height="32" /></li>
@@ -20,10 +20,10 @@
 					<li><a href="die.php" rel="nofollow">Logout</a></li>
 			</ul>
 		</header>
-        {% if person.is_adult %}
+        {% if page.showerror %}
 			<div class="warning">
 				<ul>
-						<p>{{ page.Error }}</p>
+						<p>{{ page.Error | escape }}</p>
 				</ul>
 			</div>
         {% endif %}
